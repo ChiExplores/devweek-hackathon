@@ -1,21 +1,13 @@
-// Require modules
 const express = require('express');
-
-// Create the Express app
 const app = express();
+const port = process.env.PORT || 5000;
 
-// Configure the app (app.set)
+// console.log that your server is up and running
+app.listen(port, () => console.log(`Listening on port ${port}`));
+
+// create a GET route
+app.get('/express_backend', (req, res) => {
+	res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
+});
 app.get('/', (req, res) => res.send('Hello Worldd!'))
 app.get('/login', (req, res) => res.send('Login'))
-
-
-// Mount middleware (app.use)
-
-
-// Mount routes
-
-
-// Tell the app to listen on port 3000
-app.listen(3000, function () {
-	console.log('Listening on port 3000');
-});
