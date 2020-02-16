@@ -8,14 +8,19 @@ const SideBar = () => {
     { location: "Oakland", population: 67000, status: "open" },
     { location: "San Jose", population: 1100000, status: "open" }
   ];
+  let mapkey = 0;
   let activeEvents = props.map(obj => {
+    mapkey++;
+    let color = obj.status === "open" ? "blue" : "orange";
     return (
-      <li className="blocklist">
+      <li key={mapkey} className="blocklist">
         <div className="info-top-block">
           <h2 className="info-city">{obj.location}</h2>
           <p className="info-pop">{obj.population}</p>
         </div>
-        <p className="info-status">{obj.status}</p>
+        <p className="info-status" style={{ color: color }}>
+          {obj.status}
+        </p>
         <hr />
       </li>
     );
