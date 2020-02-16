@@ -13,8 +13,20 @@ import Mapped from "./Mapped";
 
 class App extends Component {
   state = {
-    data: null
+    data: null,
+    city: null,
   };
+
+  handleSearch = (e) => {
+    e.preventDefault();
+    console.log('dsfdfsdf ',e)
+  }
+
+  handleChange = (e) => {
+    console.log('hello handle change')
+    this.setState({ city: e.target.value });
+
+  }
 
   componentDidMount() {
     // Call our fetch function below once the component mounts

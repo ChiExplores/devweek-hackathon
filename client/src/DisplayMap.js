@@ -38,6 +38,42 @@ export class DisplayMap extends React.Component {
       }
     );
 
+    var geocodingParams = {
+      searchText: '200 S Mathilda Ave, Sunnyvale, CA'
+    };
+
+    var onResult = function (result) {
+      var locations = result.Response.View[0].Result,
+        position,
+        marker;
+      // Add a marker for each location found
+      locations.map(location => {
+        position = {
+          lat: location.Location.DisplayPosition.Latitude,
+          lng: location.Location.DisplayPosition.Longitude
+        };
+        marker = new H.map.Marker(position);
+        map.addObject(marker);
+      })
+
+    };
+
+    // Get an instance of the geocoding service:
+    var geocoder = platform.getGeocodingService();
+
+    // Call the geocode method with the geocoding parameters,
+    // the callback and an error callback function (called if a
+    // communication error occurs):
+    geocoder.geocode(geocodingParams, onResult, function (e) {
+      alert(e);
+    });
+    // var icon = new H.map.Icon(svgMarkup),
+    // coords = {lat: 52.53075, lng: 13.3851},
+    // marker = new H.map.Marker(coords, {icon: icon});
+    // map.addObject(marker);
+    // map.setCenter(coords);
+
+
     var icon = new H.map.Icon(svgMarkup),
       coords = { lat: 52.53075, lng: 13.3851 },
       marker = new H.map.Marker(coords, { icon: icon });
