@@ -23,3 +23,44 @@
 .display-none {
   display: none;
 }
+
+.headings {
+  margin-left: 15px;
+  text-align: left;
+  display: block;
+  font-size: 18px;
+  width: 100%;
+}
+
+.col-3 {
+  width: 32%;
+  text-align: left;
+  font-size: 13px;
+  float: left;
+  display: inline-block;
+}
+.col-2 {
+  width: 45%;
+  text-align: left;
+  font-size: 13px;
+  float: left;
+  display: inline-block;
+}
+
+.row {
+  margin: 0 0 0 20px;
+  padding: 0;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.pop-button {
+  border-style: none;
+  background-color: lightseagreen;
+  padding: 7px 14px;
+  margin: 10px;
+  border-radius: 7px;
+  color: white;
+  font-size: 14px;
+}
