@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import {
   BrowserRouter,
@@ -8,9 +9,9 @@ import {
 } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
-
 import Form from "./Form";
 import { Header } from "./Header";
+import {DisplayMap} from "./DisplayMap";
 
 class App extends Component {
   state = {
@@ -44,6 +45,11 @@ class App extends Component {
             <Route path="/dataType/:location" component={Map} />
           </Switch>
         </BrowserRouter>
+
+        <DisplayMap/>
+        // Render the newly fetched data inside of this.state.data 
+        <p className="App-intro">{this.state.data}</p>
+
       </div>
     );
   }
