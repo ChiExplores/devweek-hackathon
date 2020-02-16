@@ -9,6 +9,7 @@ const SideBar = (props) => {
     { location: "Oakland", population: 67000, status: "open" },
     { location: "San Jose", population: 1100000, status: "open" }
   ];
+
   let mapkey=0;
   let activeEvents = data.map(obj => {
     mapkey++;
@@ -18,7 +19,9 @@ const SideBar = (props) => {
           <h2 className="info-city">{obj.location}</h2>
           <p className="info-pop">{obj.population}</p>
         </div>
-        <p className="info-status">{obj.status}</p>
+        <p className="info-status" style={{ color: color }}>
+          {obj.status}
+        </p>
         <hr />
       </li>
     );

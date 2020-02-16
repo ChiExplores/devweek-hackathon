@@ -50,13 +50,11 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Header />
-
           <Switch>
             <Route exact path="/" component={Form} />
             <Route path="/outbreaks" component={Mapped} />
-            <Route path="/outbreaks/:location" component={Mapped} />
-            <Route path="/reported/:location" component={Mapped} />
             <Route path="/reported" component={Mapped} />
+            <Route component={Form} />
           </Switch>
         </BrowserRouter>
 

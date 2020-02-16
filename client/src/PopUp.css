@@ -1,0 +1,25 @@
+.modal {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.modal-main {
+  position: fixed;
+  background: white;
+  width: 40%;
+  height: auto;
+  top: 50%;
+  left: 66%;
+  transform: translate(-50%, -50%);
+  border-radius: 7px;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
