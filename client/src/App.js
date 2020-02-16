@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import {
   BrowserRouter,
@@ -7,13 +6,10 @@ import {
   Switch,
   Redirect
 } from "react-router-dom";
-import logo from "./logo.svg";
 import "./App.css";
 import Form from "./Form";
-import { Header } from "./Header";
-import { DisplayMap } from "./DisplayMap";
-require('dotenv').config()
-
+import Header from "./Header";
+import Mapped from "./Mapped";
 
 class App extends Component {
   state = {
@@ -48,22 +44,23 @@ class App extends Component {
     }
     return body;
   };
-
+  // Render the newly fetched data inside of this.state.data
   render() {
     return (
       <div className="App">
         <BrowserRouter>
-          // Render the newly fetched data inside of this.state.data
+          <Header />
+
           <Switch>
             <Route exact path="/" component={Form} />
-            <Route path="/dataType/:location" component={DisplayMap} />
+            <Route path="/outbreaks" component={Mapped} />
+            <Route path="/outbreaks/:location" component={Mapped} />
+            <Route path="/reported/:location" component={Mapped} />
+            <Route path="/reported" component={Mapped} />
           </Switch>
         </BrowserRouter>
 
-        <DisplayMap />
-  
         <p className="App-intro">{this.state.data}</p>
-
       </div>
     );
   }

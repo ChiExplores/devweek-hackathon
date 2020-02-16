@@ -1,13 +1,14 @@
-import * as React from 'react';
+import * as React from "react";
 import { platform } from "./platform";
 let H = window.H;
 // import CitiesInput from "city"
 
-// loops through citiesInput.js 
+// loops through citiesInput.js
 
 //cities.forech(e => { })
 
-var svgMarkup = '<svg width="24" height="24" ' +
+var svgMarkup =
+  '<svg width="24" height="24" ' +
   'xmlns="http://www.w3.org/2000/svg">' +
   '<rect stroke="white" fill="#1b468d" x="1" y="1" width="22" ' +
   'height="22" /><text x="12" y="18" font-size="12pt" ' +
@@ -73,6 +74,12 @@ export class DisplayMap extends React.Component {
     // map.setCenter(coords);
 
 
+    var icon = new H.map.Icon(svgMarkup),
+      coords = { lat: 52.53075, lng: 13.3851 },
+      marker = new H.map.Marker(coords, { icon: icon });
+    map.addObject(marker);
+    map.setCenter(coords);
+    // <Marker prop.city=city/>
 
     // MapEvents enables the event system
     // Behavior implements default interactions for pan/zoom (also on mobile touch environments)
@@ -94,7 +101,12 @@ export class DisplayMap extends React.Component {
   render() {
     return (
       // Set a height on the map so it will display
-      <div ref={this.mapRef} style={{ height: "500px" }} />
+      <div
+        ref={this.mapRef}
+        style={{ height: "100vh", width: "66.66vw", float: "right" }}
+      />
     );
   }
 }
+
+export default DisplayMap;
