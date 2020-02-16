@@ -1,0 +1,64 @@
+.sidebar-container {
+  width: 33.33vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+.links-bar {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+.link-buttons {
+  width: 50%;
+  text-decoration: none;
+  color: grey;
+  padding: 20px 0;
+  display: inline-block;
+}
+
+.is-active {
+  color: black;
+  background-color: lightcyan;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.blocklist {
+  display: block;
+  height: 80px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.info-top-block {
+  width: 95%;
+  margin: 10px;
+}
+
+.info-pop {
+  display: inline-block;
+  margin: 8px 0 0 0;
+  text-align: right;
+  width: 50%;
+}
+
+.info-city {
+  display: inline-block;
+  text-align: left;
+  margin: 8px 0 0 0;
+  width: 50%;
+}
+
+.info-status {
+  margin: 8px 0 0 8px;
+  display: block;
+  width: 80%;
+  text-align: left;
+}
