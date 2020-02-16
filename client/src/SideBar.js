@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./SideBar.css";
 
+
 const SideBar = props => {
   let mapkey = 0;
   let activeEvents = props.data.map(obj => {
@@ -16,6 +17,7 @@ const SideBar = props => {
         key={mapkey}
         className="blocklist"
       >
+
         <div className="info-top-block">
           <h2 className="info-city">{obj.location}</h2>
           <p className="info-pop">{obj.population}</p>

@@ -100,6 +100,7 @@ const Mapped = () => {
         <h1>{modalContent}</h1>
       </PopUp>
       <SideBar
+
         handleMarker={handleMarker}
         handleModalContent={handleModalContent}
         data={data}
@@ -108,5 +109,6 @@ const Mapped = () => {
     </div>
   );
 };
+
 
 export default Mapped;
