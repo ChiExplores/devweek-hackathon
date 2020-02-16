@@ -25,10 +25,9 @@ const Mapped = () => {
       <SideBar
        handleMarker={handleMarker}
       />
-      <DisplayMap
-        city={state}
-      />
-    
+      <DisplayMap city={state}/>
+      </div>
+  )
 }
 
 export default Mapped;
