@@ -1,0 +1,20 @@
+.header {
+  position: relative;
+  top: 0;
+  height: 50px;
+  width: 100vw;
+  display: block;
+  margin: auto;
+  overflow: hidden;
+}
+.header-title {
+  margin: 5px 10px;
+  padding: 0;
+  float: left;
+}
+.avatar {
+  height: 35px;
+  width: 35px;
+  margin: 7px;
+  float: right;
+}
