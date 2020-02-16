@@ -5,7 +5,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <header className="header">
-      <h1 className="header-title">Outbreak Map</h1>
+      <h2 className="header-title">Outbreak Map</h2>
       <img src="./logo.svg" className="avatar" alt="avatar" />
     </header>
   );

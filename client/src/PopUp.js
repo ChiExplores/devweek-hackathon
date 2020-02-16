@@ -9,7 +9,17 @@ const PopUp = ({ handleClose, show, children }) => {
     <div className={showHideClassName}>
       <section className="modal-main">
         {children}
-        <button onClick={handleClose}>close</button>
+        <button className="pop-button" onClick={handleClose}>
+          close
+        </button>
+        <button
+          className="pop-button"
+          onClick={() => {
+            return true;
+          }}
+        >
+          Request Resources
+        </button>
       </section>
     </div>
   );

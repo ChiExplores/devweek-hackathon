@@ -4,12 +4,12 @@
   height: 50px;
   width: 100vw;
   display: block;
-  margin: auto;
+
   overflow: hidden;
   background-color: rgb(233, 243, 245);
 }
 .header-title {
-  margin: 5px 10px;
+  margin: 10px 20px;
   padding: 0;
   float: left;
 }
