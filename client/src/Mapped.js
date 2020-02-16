@@ -42,6 +42,7 @@ const Mapped = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [state, setState] = useState("Chicago");
+  console.log(state);
   const [modalContent, setModalContent] = useState(<p>Empty Modal</p>);
 
   let handleMarker = city => {
@@ -66,7 +67,7 @@ const Mapped = () => {
           <p className="col-3">{obj.reports}</p>
           <p className="col-3">{obj.population}</p>
         </div>
-        <h3 className="headings">Resources</h3>
+        <h3 className="headings">Resources Needed</h3>
         <div className="row">
           <p className="col-2">Nurses</p>
           <p className="col-2">{obj.resources.nurses}</p>
@@ -82,7 +83,7 @@ const Mapped = () => {
         <h3 className="headings">Workflow State</h3>
         {obj.signatures.map(sig => {
           return (
-            <div className="row">
+            <div key={sig.who} className="row">
               <p className="col-2">{sig.who}</p>
               <p className="col-2">{sig.status}</p>
             </div>
@@ -100,7 +101,6 @@ const Mapped = () => {
         <h1>{modalContent}</h1>
       </PopUp>
       <SideBar
-
         handleMarker={handleMarker}
         handleModalContent={handleModalContent}
         data={data}
@@ -109,6 +109,5 @@ const Mapped = () => {
     </div>
   );
 };
-
 
 export default Mapped;
