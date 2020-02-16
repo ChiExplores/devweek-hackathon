@@ -1,7 +1,16 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {Map} from "./Map";
+import React, { Component } from "react";
+import {
+  BrowserRouter,
+  Route,
+  Router,
+  Switch,
+  Redirect
+} from "react-router-dom";
+import logo from "./logo.svg";
+import "./App.css";
+
+import Form from "./Form";
+import { Header } from "./Header";
 
 class App extends Component {
   state = {
@@ -16,11 +25,11 @@ class App extends Component {
   }
   // Fetches our GET route from the Express server. (Note the route we are fetching matches the GET route from server.js
   callBackendAPI = async () => {
-    const response = await fetch('/express_backend');
+    const response = await fetch("/express_backend");
     const body = await response.json();
 
     if (response.status !== 200) {
-      throw Error(body.message)
+      throw Error(body.message);
     }
     return body;
   };
@@ -28,13 +37,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <Map/>
-        // Render the newly fetched data inside of this.state.data 
-        <p className="App-intro">{this.state.data}</p>
+        <BrowserRouter>
+          // Render the newly fetched data inside of this.state.data
+          <Switch>
+            <Route exact path="/" component={Form} />
+            <Route path="/dataType/:location" component={Map} />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
