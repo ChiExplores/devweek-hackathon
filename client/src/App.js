@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {Map} from "./Map";
 
 class App extends Component {
   state = {
@@ -31,6 +32,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
+        <Map/>
         // Render the newly fetched data inside of this.state.data 
         <p className="App-intro">{this.state.data}</p>
       </div>
